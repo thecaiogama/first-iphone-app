@@ -12,6 +12,11 @@ class ViewController: UIViewController, UITableViewDelegate {
             thingToDo = NSUserDefaults.standardUserDefaults().objectForKey("thingsToDo") as! [String]
         }
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        tblTodo.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -35,10 +40,14 @@ class ViewController: UIViewController, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
-        var doneButton = UITableViewRowAction(style: .Default, title: "Done!", handler: { (action, indexPath) in
+        let doneButton = UITableViewRowAction(style: .Default, title: "Done!", handler: { (action, indexPath) in
             ReminderHelper.done(indexPath.row)
-            self.tblTodo.reloadData()
+            
+            tableView.beginUpdates()
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
+            tableView.endUpdates()
         })
+        
         doneButton.backgroundColor = UIColor.greenColor()
         return [doneButton]
     }

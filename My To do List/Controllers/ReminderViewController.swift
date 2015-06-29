@@ -15,6 +15,10 @@ class ReminderViewController: UIViewController {
         }
     }
     
+    @IBAction func cancelTapped(sender:AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     
     private func error(textField: UITextField) {
         textField.layer.borderColor = UIColor.redColor().CGColor
@@ -25,9 +29,7 @@ class ReminderViewController: UIViewController {
     }
     
     private func returnHome() {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let view : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ViewController") as! UIViewController
-        self.presentViewController(view, animated: true, completion: nil)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     private func shakeTextField(textField: UITextField) {

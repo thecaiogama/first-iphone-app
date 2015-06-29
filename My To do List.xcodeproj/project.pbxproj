@@ -178,6 +178,7 @@
 		522926021B40ADAF00ADD12E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = thecaiogama;
 				TargetAttributes = {
@@ -433,6 +434,7 @@
 				5229262B1B40ADAF00ADD12E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5229262C1B40ADAF00ADD12E /* Build configuration list for PBXNativeTarget "My To do ListTests" */ = {
 			isa = XCConfigurationList;
@@ -441,6 +443,7 @@
 				5229262E1B40ADAF00ADD12E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

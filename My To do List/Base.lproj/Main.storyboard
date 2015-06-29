@@ -34,8 +34,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="Woh-Rg-YLt">
+                                        <rect key="frame" x="0.0" y="22" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Woh-Rg-YLt" id="Z5m-cZ-X03">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -84,7 +86,7 @@
                                     <navigationItem title="Remember me to..." id="5ZK-b4-S7o">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ynd-4L-zFg">
                                             <connections>
-                                                <segue destination="vXZ-lx-hvc" kind="show" id="e9p-oS-d7Q"/>
+                                                <action selector="cancelTapped:" destination="q1l-0N-bDx" id="D78-YS-LAf"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="bGv-vm-X4I">
