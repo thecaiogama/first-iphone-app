@@ -1,25 +1,124 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="vXZ-lx-hvc" customClass="ViewController" customModule="My_To_do_List" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6vS-OP-prG">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Things I need to do" id="xml-np-Gjv">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Mes-u8-b5K">
+                                            <connections>
+                                                <segue destination="q1l-0N-bDx" kind="showDetail" id="g9W-B3-uyH"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ANH-Bb-tdR">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="Woh-Rg-YLt">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Woh-Rg-YLt" id="Z5m-cZ-X03">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="wW1-wm-i7g"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="fgm-CC-HkU"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ANH-Bb-tdR" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="5H7-k7-Kx0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6vS-OP-prG" secondAttribute="trailing" constant="-16" id="5dG-IU-ZhX"/>
+                            <constraint firstItem="6vS-OP-prG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="Agt-lf-fkJ"/>
+                            <constraint firstItem="6vS-OP-prG" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="JEB-tr-IQk"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ANH-Bb-tdR" secondAttribute="bottom" id="Ric-vF-4OT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ANH-Bb-tdR" secondAttribute="trailing" constant="-16" id="XZ6-bW-fp2"/>
+                            <constraint firstItem="ANH-Bb-tdR" firstAttribute="top" secondItem="6vS-OP-prG" secondAttribute="bottom" id="vyr-mW-27S"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tblTodo" destination="ANH-Bb-tdR" id="p9I-h2-5jF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="379.5" y="336.5"/>
+        </scene>
+        <!--Reminder View Controller-->
+        <scene sceneID="z3v-3c-6Iy">
+            <objects>
+                <viewController id="q1l-0N-bDx" customClass="ReminderViewController" customModule="My_To_do_List" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DFl-ez-dKJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zsx-e9-Ylj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uWu-K2-lJU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xqI-3h-IBk">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Remember me to..." id="5ZK-b4-S7o">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ynd-4L-zFg">
+                                            <connections>
+                                                <segue destination="vXZ-lx-hvc" kind="show" id="e9p-oS-d7Q"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="bGv-vm-X4I">
+                                            <connections>
+                                                <action selector="btnSave:" destination="q1l-0N-bDx" id="HT7-JM-Cdj"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Remember me to..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bs3-eX-q1d">
+                                <rect key="frame" x="16" y="96" width="343" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="xqI-3h-IBk" secondAttribute="trailing" constant="-16" id="I0j-Jq-70Q"/>
+                            <constraint firstItem="bs3-eX-q1d" firstAttribute="trailing" secondItem="uWu-K2-lJU" secondAttribute="trailingMargin" id="ZHY-up-Lc9"/>
+                            <constraint firstItem="bs3-eX-q1d" firstAttribute="leading" secondItem="uWu-K2-lJU" secondAttribute="leadingMargin" id="c5T-1b-Nz8"/>
+                            <constraint firstItem="xqI-3h-IBk" firstAttribute="top" secondItem="DFl-ez-dKJ" secondAttribute="bottom" id="jIr-oz-Tn3"/>
+                            <constraint firstItem="xqI-3h-IBk" firstAttribute="leading" secondItem="uWu-K2-lJU" secondAttribute="leadingMargin" constant="-16" id="jPc-8u-zyb"/>
+                            <constraint firstItem="bs3-eX-q1d" firstAttribute="top" secondItem="xqI-3h-IBk" secondAttribute="bottom" constant="32" id="yNm-DC-h2K"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="txtReminder" destination="bs3-eX-q1d" id="HzL-SB-1xi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8YC-cH-Sr2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="871.5" y="336.5"/>
         </scene>
     </scenes>
 </document>

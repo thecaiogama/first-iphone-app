@@ -1,9 +1,14 @@
-//
-//  ReminderHelper.swift
-//  My To do List
-//
-//  Created by Caio on 6/28/15.
-//  Copyright (c) 2015 thecaiogama. All rights reserved.
-//
-
 import Foundation
+
+
+class ReminderHelper  {
+    class func remindMeTo(rememberMeTo: String) {
+        thingToDo.append(rememberMeTo)
+        NSUserDefaults.standardUserDefaults().setObject(thingToDo, forKey: "thingsToDo")
+    }
+    
+    class func done(reminderNumber: Int) {
+        thingToDo.removeAtIndex(reminderNumber)
+        NSUserDefaults.standardUserDefaults().setObject(thingToDo, forKey: "thingsToDo")
+    }
+}

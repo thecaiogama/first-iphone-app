@@ -13,6 +13,8 @@
 		522926171B40ADAF00ADD12E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 522926161B40ADAF00ADD12E /* Images.xcassets */; };
 		5229261A1B40ADAF00ADD12E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522926181B40ADAF00ADD12E /* LaunchScreen.xib */; };
 		522926261B40ADAF00ADD12E /* My_To_do_ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522926251B40ADAF00ADD12E /* My_To_do_ListTests.swift */; };
+		522926311B40B05D00ADD12E /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522926301B40B05D00ADD12E /* ReminderViewController.swift */; };
+		522926341B40B93000ADD12E /* ReminderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522926331B40B93000ADD12E /* ReminderHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		5229261F1B40ADAF00ADD12E /* My To do ListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "My To do ListTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		522926241B40ADAF00ADD12E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		522926251B40ADAF00ADD12E /* My_To_do_ListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_To_do_ListTests.swift; sourceTree = "<group>"; };
+		522926301B40B05D00ADD12E /* ReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReminderViewController.swift; path = Controllers/ReminderViewController.swift; sourceTree = "<group>"; };
+		522926331B40B93000ADD12E /* ReminderHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +81,9 @@
 		5229260C1B40ADAF00ADD12E /* My To do List */ = {
 			isa = PBXGroup;
 			children = (
+				522926321B40B8F000ADD12E /* Helpers */,
+				5229262F1B40ADE800ADD12E /* Controllers */,
 				5229260F1B40ADAF00ADD12E /* AppDelegate.swift */,
-				522926111B40ADAF00ADD12E /* ViewController.swift */,
 				522926131B40ADAF00ADD12E /* Main.storyboard */,
 				522926161B40ADAF00ADD12E /* Images.xcassets */,
 				522926181B40ADAF00ADD12E /* LaunchScreen.xib */,
@@ -110,6 +115,23 @@
 				522926241B40ADAF00ADD12E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5229262F1B40ADE800ADD12E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				522926111B40ADAF00ADD12E /* ViewController.swift */,
+				522926301B40B05D00ADD12E /* ReminderViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		522926321B40B8F000ADD12E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				522926331B40B93000ADD12E /* ReminderHelper.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,7 +235,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				522926121B40ADAF00ADD12E /* ViewController.swift in Sources */,
+				522926341B40B93000ADD12E /* ReminderHelper.swift in Sources */,
 				522926101B40ADAF00ADD12E /* AppDelegate.swift in Sources */,
+				522926311B40B05D00ADD12E /* ReminderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
